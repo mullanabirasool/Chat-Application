@@ -1,0 +1,738 @@
+// =====================================
+// CHAT WINDOW
+// =====================================
+
+.chat-window {
+  flex: 1;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #101010;
+  color: #ffffff;
+
+  min-width: 0;
+}
+
+
+// =====================================
+// EMPTY CHAT
+// =====================================
+
+.empty-chat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.empty-chat h2 {
+  margin: 0;
+
+  color: #777;
+
+  font-size: 18px;
+  font-weight: 500;
+}
+
+
+// =====================================
+// CHAT HEADER
+// =====================================
+
+.chat-header {
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 20px;
+
+  box-sizing: border-box;
+
+  background: #1b1b1b;
+
+  border-bottom: 1px solid #333;
+
+  flex-shrink: 0;
+}
+
+
+// =====================================
+// USER AVATAR
+// =====================================
+
+.chat-user-avatar {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #00a6a6;
+
+  color: #ffffff;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  flex-shrink: 0;
+}
+
+
+// =====================================
+// USER INFO
+// =====================================
+
+.chat-user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.chat-user-info h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: 600;
+}
+
+
+// =====================================
+// USER STATUS
+// =====================================
+
+.chat-user-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin: 3px 0 0;
+
+  font-size: 11px;
+}
+
+
+// =====================================
+// ONLINE
+// =====================================
+
+.chat-user-status.online {
+  color: #00c853;
+}
+
+
+// =====================================
+// OFFLINE
+// =====================================
+
+.chat-user-status.offline {
+  color: #777;
+}
+
+
+// =====================================
+// STATUS DOT
+// =====================================
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+
+  display: inline-block;
+
+  border-radius: 50%;
+}
+
+.chat-user-status.online .status-dot {
+  background: #00c853;
+}
+
+.chat-user-status.offline .status-dot {
+  background: #666;
+}
+
+
+// =====================================
+// MESSAGES AREA
+// =====================================
+
+.messages {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+
+  padding: 20px;
+
+  overflow-y: auto;
+
+  box-sizing: border-box;
+}
+
+
+// =====================================
+// NO MESSAGES
+// =====================================
+
+.no-messages {
+  margin: auto;
+
+  color: #777;
+
+  font-size: 14px;
+
+  text-align: center;
+}
+
+
+// =====================================
+// MESSAGE
+// =====================================
+
+.message {
+  position: relative;
+
+  max-width: 65%;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 10px 12px;
+
+  border-radius: 12px;
+
+  box-sizing: border-box;
+
+  word-break: break-word;
+}
+
+
+// =====================================
+// MESSAGE CONTENT
+// =====================================
+
+.message-content {
+  position: relative;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 5px;
+}
+
+
+// =====================================
+// MESSAGE TEXT
+// =====================================
+
+.message-text {
+  flex: 1;
+
+  margin: 0;
+
+  font-size: 14px;
+
+  line-height: 1.4;
+
+  color: #ffffff;
+}
+
+
+// =====================================
+// SENT MESSAGE
+// =====================================
+
+.message.sent {
+  align-self: flex-end;
+
+  background: #00a6a6;
+
+  border-bottom-right-radius: 4px;
+}
+
+
+// =====================================
+// RECEIVED MESSAGE
+// =====================================
+
+.message.received {
+  align-self: flex-start;
+
+  background: #252525;
+
+  border-bottom-left-radius: 4px;
+}
+
+
+// =====================================
+// MESSAGE BOTTOM
+// =====================================
+
+.message-bottom {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  margin-top: 5px;
+}
+
+
+// =====================================
+// MESSAGE TIME
+// =====================================
+
+.message-time {
+  font-size: 10px;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  white-space: nowrap;
+}
+
+
+// =====================================
+// THREE DOT MENU CONTAINER
+// =====================================
+
+.message-menu-container {
+  position: relative;
+
+  flex-shrink: 0;
+}
+
+
+// =====================================
+// THREE DOT BUTTON
+// =====================================
+
+.message-menu-button {
+  width: 26px;
+  height: 26px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-size: 20px;
+
+  line-height: 1;
+
+  padding: 0;
+
+  cursor: pointer;
+
+  opacity: 0;
+
+  transition:
+    background 0.2s ease,
+    opacity 0.2s ease;
+}
+
+
+// Show dots when hovering message
+
+.message:hover .message-menu-button {
+  opacity: 1;
+}
+
+
+// Keep dots visible when menu is open
+
+.message-menu-button:hover {
+  opacity: 1;
+
+  background: rgba(255, 255, 255, 0.15);
+}
+
+
+// =====================================
+// DELETE MENU
+// =====================================
+
+.message-menu {
+  position: absolute;
+
+  top: 28px;
+  right: 0;
+
+  width: 120px;
+
+  padding: 5px;
+
+  background: #ffffff;
+
+  border-radius: 6px;
+
+  box-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.5);
+
+  z-index: 9999;
+
+  box-sizing: border-box;
+}
+
+
+// =====================================
+// DELETE BUTTON
+// =====================================
+
+.message-menu button {
+  width: 100%;
+
+  display: block;
+
+  border: none;
+
+  background: transparent;
+
+  color: #e74c3c;
+
+  padding: 10px;
+
+  text-align: left;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  border-radius: 5px;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+
+// =====================================
+// DELETE BUTTON HOVER
+// =====================================
+
+.message-menu button:hover {
+  background: #f2f2f2;
+
+  color: #c0392b;
+}
+
+
+// =====================================
+// TYPING INDICATOR
+// =====================================
+
+.typing-indicator {
+  min-height: 22px;
+
+  padding: 4px 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  box-sizing: border-box;
+
+  background: #101010;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-style: italic;
+}
+
+.typing-indicator span {
+  animation: typingAnimation 1.2s infinite;
+}
+
+
+// =====================================
+// TYPING ANIMATION
+// =====================================
+
+@keyframes typingAnimation {
+
+  0% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.4;
+  }
+
+}
+
+
+// =====================================
+// MESSAGE INPUT AREA
+// =====================================
+
+.message-input {
+  min-height: 70px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 12px 20px;
+
+  box-sizing: border-box;
+
+  background: #1b1b1b;
+
+  border-top: 1px solid #333;
+
+  flex-shrink: 0;
+}
+
+
+// =====================================
+// MESSAGE INPUT
+// =====================================
+
+.message-input input {
+  flex: 1;
+
+  height: 44px;
+
+  padding: 0 16px;
+
+  border: 1px solid #444;
+
+  border-radius: 24px;
+
+  outline: none;
+
+  background: #101010;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  box-sizing: border-box;
+
+  transition: border 0.2s ease;
+}
+
+
+// =====================================
+// INPUT PLACEHOLDER
+// =====================================
+
+.message-input input::placeholder {
+  color: #777;
+}
+
+
+// =====================================
+// INPUT FOCUS
+// =====================================
+
+.message-input input:focus {
+  border-color: #00a6a6;
+}
+
+
+// =====================================
+// SEND BUTTON
+// =====================================
+
+.message-input button {
+  height: 44px;
+
+  padding: 0 22px;
+
+  border: none;
+
+  border-radius: 24px;
+
+  background: #00a6a6;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  flex-shrink: 0;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+// =====================================
+// SEND BUTTON HOVER
+// =====================================
+
+.message-input button:hover {
+  background: #008f8f;
+}
+
+
+// =====================================
+// SEND BUTTON ACTIVE
+// =====================================
+
+.message-input button:active {
+  transform: scale(0.97);
+}
+
+
+// =====================================
+// SCROLLBAR
+// =====================================
+
+.messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messages::-webkit-scrollbar-track {
+  background: #101010;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  background: #333;
+
+  border-radius: 10px;
+}
+
+.messages::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
+
+
+// =====================================
+// RESPONSIVE - TABLET
+// =====================================
+
+@media (max-width: 768px) {
+
+  .chat-header {
+    height: 60px;
+
+    padding: 0 15px;
+  }
+
+  .chat-user-avatar {
+    width: 36px;
+    height: 36px;
+
+    font-size: 14px;
+  }
+
+  .chat-user-info h2 {
+    font-size: 15px;
+  }
+
+  .messages {
+    padding: 15px;
+  }
+
+  .message {
+    max-width: 80%;
+
+    padding: 9px 12px;
+  }
+
+  .message-text {
+    font-size: 13px;
+  }
+
+  .message-input {
+    min-height: 64px;
+
+    padding: 10px 12px;
+  }
+
+  .message-input input {
+    height: 42px;
+
+    padding: 0 14px;
+
+    font-size: 13px;
+  }
+
+  .message-input button {
+    height: 42px;
+
+    padding: 0 17px;
+
+    font-size: 13px;
+  }
+
+}
+
+
+// =====================================
+// SMALL MOBILE
+// =====================================
+
+@media (max-width: 480px) {
+
+  .message {
+    max-width: 85%;
+  }
+
+  .message-input {
+    gap: 6px;
+  }
+
+  .message-input button {
+    padding: 0 14px;
+  }
+
+  .message-menu {
+    width: 110px;
+  }
+
+}
+
+
+// =====================================
+// MOBILE - ALWAYS SHOW THREE DOTS
+// =====================================
+
+@media (max-width: 768px) {
+
+  .message-menu-button {
+    opacity: 1;
+  }
+
+}

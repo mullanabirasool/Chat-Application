@@ -1,0 +1,312 @@
+// =====================================
+// USER LIST CONTAINER
+// =====================================
+
+.user-list {
+  width: 280px;
+  height: 100%;
+
+  box-sizing: border-box;
+
+  background: #151515;
+
+  border-right: 1px solid #333;
+
+  overflow-y: auto;
+}
+
+
+// =====================================
+// USER LIST HEADER
+// =====================================
+
+.user-list-header {
+  padding: 18px 20px;
+
+  background: #1b1b1b;
+
+  border-bottom: 1px solid #333;
+}
+
+.user-list-header h2 {
+  margin: 0;
+
+  color: #00a6a6;
+
+  font-size: 18px;
+
+  font-weight: 600;
+}
+
+
+// =====================================
+// USER ITEM
+// =====================================
+
+.user-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 14px 18px;
+
+  border-bottom: 1px solid #292929;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+
+// =====================================
+// USER ITEM HOVER
+// =====================================
+
+.user-item:hover {
+  background: #222;
+}
+
+
+// =====================================
+// USER ITEM ACTIVE EFFECT
+// =====================================
+
+.user-item:active {
+  background: #292929;
+}
+
+
+// =====================================
+// USER AVATAR
+// =====================================
+
+.user-avatar {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #00a6a6;
+
+  color: #fff;
+
+  font-size: 17px;
+
+  font-weight: 600;
+
+  text-transform: uppercase;
+}
+
+
+// =====================================
+// USER INFO
+// =====================================
+
+.user-info {
+  min-width: 0;
+
+  flex: 1;
+}
+
+
+// =====================================
+// USER NAME
+// =====================================
+
+.user-name {
+  margin: 0;
+
+  overflow: hidden;
+
+  color: #fff;
+
+  font-size: 15px;
+
+  font-weight: 500;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+
+// =====================================
+// LOADING
+// =====================================
+
+.user-loading {
+  margin: 0;
+
+  padding: 20px;
+
+  background: #151515;
+
+  color: #aaa;
+
+  font-size: 14px;
+
+  text-align: center;
+}
+
+
+// =====================================
+// NO USERS
+// =====================================
+
+.no-users {
+  margin: 0;
+
+  padding: 30px 20px;
+
+  color: #888;
+
+  font-size: 14px;
+
+  text-align: center;
+}
+
+
+// =====================================
+// SCROLLBAR
+// =====================================
+
+.user-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.user-list::-webkit-scrollbar-track {
+  background: #151515;
+}
+
+.user-list::-webkit-scrollbar-thumb {
+  background: #444;
+
+  border-radius: 10px;
+}
+
+.user-list::-webkit-scrollbar-thumb:hover {
+  background: #00a6a6;
+}
+
+
+// =====================================
+// RESPONSIVE
+// =====================================
+
+@media (max-width: 768px) {
+  .user-list {
+    width: 220px;
+  }
+
+  .user-item {
+    padding: 12px 14px;
+  }
+
+  .user-avatar {
+    width: 38px;
+    height: 38px;
+
+    font-size: 15px;
+  }
+
+  .user-name {
+    font-size: 14px;
+  }
+}
+// =====================================
+// USER STATUS
+// =====================================
+
+.user-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin: 4px 0 0;
+
+  font-size: 12px;
+}
+
+
+// =====================================
+// STATUS DOT
+// =====================================
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  display: inline-block;
+}
+
+
+// =====================================
+// ONLINE
+// =====================================
+
+// =====================================
+// USER STATUS
+// =====================================
+
+.user-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  margin: 4px 0 0;
+
+  font-size: 12px;
+}
+
+
+// =====================================
+// STATUS DOT
+// =====================================
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+
+  display: inline-block;
+
+  border-radius: 50%;
+}
+
+
+// =====================================
+// ONLINE
+// =====================================
+
+.user-status.online {
+  color: #00c853;
+}
+
+.user-status.online .status-dot {
+  background: #00c853;
+}
+
+
+// =====================================
+// OFFLINE
+// =====================================
+
+.user-status.offline {
+  color: #777;
+}
+
+.user-status.offline .status-dot {
+  background: #666;
+}

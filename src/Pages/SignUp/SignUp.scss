@@ -1,0 +1,325 @@
+// =====================================
+// COLORS
+// =====================================
+
+$primary-color: #008b8b;
+$primary-hover: #007575;
+
+$black: #000000;
+$dark-bg: #222222;
+
+$white: #ffffff;
+
+$input-border: #444444;
+$placeholder: #aaaaaa;
+
+
+// =====================================
+// SIGN UP CONTAINER
+// =====================================
+
+.signup-container {
+  width: 100vw;
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  background: $primary-color;
+}
+
+
+// =====================================
+// SIGN UP FORM
+// =====================================
+
+.signup-form {
+  width: 420px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+
+  padding: 32px;
+
+  box-sizing: border-box;
+
+  background: $black;
+
+  border-radius: 12px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+}
+
+
+// =====================================
+// HEADING
+// =====================================
+
+.signup-form h2 {
+  margin: 0;
+
+  color: $white;
+
+  text-align: center;
+
+  font-size: 28px;
+
+  font-weight: 600;
+}
+
+
+// =====================================
+// SUBTITLE
+// =====================================
+
+.signup-subtitle {
+  margin-top: -10px;
+
+  color: #aaaaaa;
+
+  text-align: center;
+
+  font-size: 14px;
+}
+
+
+// =====================================
+// FORM GROUP
+// =====================================
+
+.form-group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+
+// =====================================
+// LABEL
+// =====================================
+
+.form-group label {
+  color: $white;
+
+  font-size: 14px;
+
+  font-weight: 500;
+}
+
+
+// =====================================
+// INPUT
+// =====================================
+
+.form-group input {
+  width: 100%;
+
+  height: 48px;
+
+  padding: 0 15px;
+
+  box-sizing: border-box;
+
+  background: $dark-bg;
+
+  color: $white;
+
+  border: 1px solid $input-border;
+
+  border-radius: 8px;
+
+  outline: none;
+
+  font-size: 15px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+// =====================================
+// INPUT PLACEHOLDER
+// =====================================
+
+.form-group input::placeholder {
+  color: $placeholder;
+}
+
+
+// =====================================
+// INPUT FOCUS
+// =====================================
+
+.form-group input:focus {
+  border-color: $primary-color;
+
+  box-shadow: 0 0 0 2px rgba(0, 139, 139, 0.15);
+}
+
+
+// =====================================
+// SIGN UP BUTTON
+// =====================================
+
+.signup-form button {
+  width: 100%;
+
+  height: 48px;
+
+  margin-top: 3px;
+
+  background: $primary-color;
+
+  color: $white;
+
+  border: none;
+
+  border-radius: 8px;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+// =====================================
+// BUTTON HOVER
+// =====================================
+
+.signup-form button:hover {
+  background: $primary-hover;
+}
+
+
+// =====================================
+// BUTTON ACTIVE
+// =====================================
+
+.signup-form button:active {
+  transform: scale(0.98);
+}
+
+
+// =====================================
+// LOGIN LINK
+// =====================================
+
+.login-link {
+  margin: 2px 0 0;
+
+  color: #aaaaaa;
+
+  text-align: center;
+
+  font-size: 14px;
+}
+
+
+// =====================================
+// LOGIN LINK
+// =====================================
+
+.login-link a {
+  color: $primary-color;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+
+// =====================================
+// LOGIN LINK HOVER
+// =====================================
+
+.login-link a:hover {
+  color: #00c9c9;
+
+  text-decoration: underline;
+}
+
+
+// =====================================
+// SUCCESS MESSAGE
+// =====================================
+
+.success-message {
+  margin: 0;
+
+  color: #00c9a7;
+
+  font-size: 14px;
+
+  text-align: center;
+}
+
+
+// =====================================
+// ERROR MESSAGE
+// =====================================
+
+.error-message {
+  margin: 0;
+
+  color: #ff5c5c;
+
+  font-size: 14px;
+
+  text-align: center;
+}
+
+
+// =====================================
+// MOBILE
+// =====================================
+
+@media (max-width: 500px) {
+
+  .signup-container {
+    padding: 15px;
+  }
+
+  .signup-form {
+    width: 100%;
+
+    padding: 25px 20px;
+
+    gap: 16px;
+  }
+
+  .signup-form h2 {
+    font-size: 24px;
+  }
+
+  .form-group input {
+    height: 46px;
+
+    font-size: 14px;
+  }
+
+  .signup-form button {
+    height: 46px;
+
+    font-size: 15px;
+  }
+}
